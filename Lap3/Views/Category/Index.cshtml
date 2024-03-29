@@ -1,0 +1,30 @@
+﻿@model IEnumerable<CoreMVC.Models.Category>
+<h2>Categories</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var category in Model)
+        {
+            <div style="  background-image: linear-gradient(45deg, #ff0000, #ffffff);">
+            <tr>
+                <td>@category.Id</td>
+                <td>@category.Name</td>
+                <td>
+                    <a class="btn btn-outline-info" asp-action="Display" asp-route-id="@category.Id">View</a>
+                    <a class="btn btn-outline-warning" asp-action="Update" asp-route-id="@category.Id">Edit</a>
+                    <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@category.Id">Delete</a>
+                </td>
+            </tr>
+            </div>
+        }
+    </tbody>
+</table>
+
+</table>

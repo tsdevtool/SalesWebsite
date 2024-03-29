@@ -1,0 +1,36 @@
+﻿@model IEnumerable<CoreMVC.Models.Product>
+
+@section Scripts {
+}
+
+<h2>Products</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr style="border: 1px solid #000000;">
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.Description</td>
+
+                <td>@product.Category?.Name</td>
+                <td><img src="@product.ImageUrl" alt="Alternate Text" style="height:30%; width:30%;" /></td>
+                <td>
+                    <a class="btn btn-outline-info" asp-action="Display" asp-route-id="@product.Id">View</a>
+                    <a class="btn btn-outline-warning" asp-action="Update" asp-route-id="@product.Id">Edit</a>
+                    <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@product.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

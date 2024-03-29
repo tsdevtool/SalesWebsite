@@ -1,0 +1,8 @@
+﻿@model CoreMVC.Models.Category
+<h2>@Model.Name</h2>
+<div>
+
+   <h3> Id @Model.Id</h3>
+   <h4>Quality @Model.Products.Count()</h4>
+</div>
+<a class="btn btn-primary" asp-action="Index">Back to List</a>
